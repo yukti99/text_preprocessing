@@ -103,15 +103,16 @@ class NLP_Preprocess_Text:
         text = self.remove_tags(text)
         text = self.remove_extra_spaces(text) 
         # now we have cleaned our text
-        output_file.write("\nAfter Text Cleaning, noise removal and spell correction : \n"+text) 
+        output_file.write("\nAfter Text Cleaning and noise removal : \n"+text) 
         
         # Tokenization    
         text = self.Tokenize_text(text)
         
         # Correcting misspelled words
         text = self.spell_corrector(text)
+       
     
-        output_file.write("\n\nAfter Tokenization and Normalization : \n"+str(text))
+        output_file.write("\n\nAfter Tokenization, Normalization and spell correction: \n"+str(text))
         print("Data Normalization and Tokenization done...")
         # Calculating total and Unique words in text
         output_file.write("\n\nTotal words in text = "+str(len(text)))    
